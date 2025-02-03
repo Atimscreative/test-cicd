@@ -23,7 +23,7 @@ jobs:
         run: cp -r .next/static .next/standalone/.next/
 
       - name: Upload to cPanel via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.isentrytechnologies.com
           username: admin@isentrytechnologies.com
