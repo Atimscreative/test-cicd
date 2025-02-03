@@ -1,0 +1,32 @@
+name: Deploy Next.js 15 to cPanel
+
+on:
+  push:
+    branches:
+      - main # Change to your deployment branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Next.js App
+        run: npm run build
+
+      - name: Copy Static Files to Standalone Folder
+        run: cp -r .next/static .next/standalone/.next/
+
+      - name: Upload to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ftp.isentrytechnologies.com
+          username: admin@isentrytechnologies.com
+          password: ISENTRYtech123+
+          local-dir: .next/standalone/ # Upload the standalone build
+          server-dir: public_html/ # Change based on your deployment path

@@ -1,0 +1,17 @@
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect all traffic to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle Next.js routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.html [L,QSA]
+
+# Serve static assets from the .next directory
+RewriteRule ^_next/(.*)$ .next/$1 [L,NC]
+
+# Custom 404 page
+ErrorDocument 404 /404.html
