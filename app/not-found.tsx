@@ -16,7 +16,7 @@ export default function NotFound() {
           <p className="font-light leading-normal text-primary-200">
             We&apos;re sorry, but the page you&apos;re looking for doesn&apos;t
             seem to exist. It might have been moved, renamed, or deleted.
-            Let&apos;s get you back on track!
+            Let&apos;s get you back on track! 😎
           </p>
 
           {/* <Link href="/"> */}

@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build-old": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build": "next build && cp -r .next/static .next/standalone/.next/"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

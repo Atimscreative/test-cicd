@@ -29,4 +29,4 @@ jobs:
           username: admin@isentrytechnologies.com
           password: ISENTRYtech123+
           local-dir: .next/standalone/ # Upload the standalone build
-          server-dir: public_html/ # Change based on your deployment path
+          server-dir: supa_next_app/ # Change based on your deployment path
